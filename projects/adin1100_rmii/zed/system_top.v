@@ -85,10 +85,12 @@ module system_top (
 
   // rmii interface
 
+  input               clk100M,
+
   output              reset_n,
   output              mdc_fmc,
   inout               mdio_fmc,
-  input               rmii_rx_ref_clk,
+  output              rmii_clk_50,
   input   [ 1:0]      rmii_rxd,
   input               rmii_rx_dv,
   input               rmii_rx_er,
@@ -111,6 +113,8 @@ module system_top (
 
   wire            sys_resetn;
   wire            gpio_resetn;
+  wire            rmii_clk;
+  wire            rmii_clk_g;
 
   // assignments
 
@@ -140,6 +144,32 @@ module system_top (
     .dio_i (iic_mux_sda_o_s),
     .dio_o (iic_mux_sda_i_s),
     .dio_p (iic_mux_sda));
+
+   // devide 100MHz clk by 2
+   BUFR #(
+      .BUFR_DIVIDE("2"),
+      .SIM_DEVICE("7SERIES")
+   )
+   BUFR_inst (
+      .O(rmii_clk),
+      .CE(1'b1),
+      .CLR(1'b0),
+      .I(clk100M)
+   );
+
+  BUFG BUFG_inst (
+      .O(rmii_clk_g),
+      .I(rmii_clk)
+   );
+
+   OBUF #(
+      .DRIVE(12),
+      .IOSTANDARD("DEFAULT"),
+      .SLEW("SLOW")
+   ) OBUF_inst (
+      .O(rmii_clk_50),
+      .I(rmii_clk_g)
+   );
 
   system_wrapper i_system_wrapper (
     .ddr_addr (ddr_addr),
@@ -205,14 +235,14 @@ module system_top (
     .spi1_sdo_i (1'b0),
     .spi1_sdo_o (),
     .reset_n (sys_resetn),
-    .ref_clk_50 (rmii_rx_ref_clk),
+    .clk_50 (rmii_clk_g),
     .MDIO_ETHERNET_1_0_mdc(mdc_fmc),
     .MDIO_ETHERNET_1_0_mdio_io(mdio_fmc),
-    .RMII_PHY_M_0_crs_dv (rmii_rx_dv),
-    .RMII_PHY_M_0_rx_er (rmii_rx_er),
-    .RMII_PHY_M_0_rxd (rmii_rxd),
-    .RMII_PHY_M_0_tx_en (rmii_tx_en),
-    .RMII_PHY_M_0_txd (rmii_txd)
+    .RMII_PHY_M_crs_dv (rmii_rx_dv),
+    .RMII_PHY_M_rx_er (rmii_rx_er),
+    .RMII_PHY_M_rxd (rmii_rxd),
+    .RMII_PHY_M_tx_en (rmii_tx_en),
+    .RMII_PHY_M_txd (rmii_txd)
     );
 
 endmodule
