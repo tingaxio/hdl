@@ -5,7 +5,7 @@ set_property -dict {PACKAGE_PIN AG26 IOSTANDARD LVCMOS25} [get_ports rmii_rx_dv]
 set_property -dict {PACKAGE_PIN AH29 IOSTANDARD LVCMOS25} [get_ports {rmii_rxd[0]}]              ; ## H26  FMC_LPC_LA21_N
 set_property -dict {PACKAGE_PIN AK30 IOSTANDARD LVCMOS25} [get_ports {rmii_rxd[1]}]              ; ## D27  FMC_LPC_LA26_N
 
-set_property -dict {PACKAGE_PIN AB27 IOSTANDARD LVCMOS25 SLEW FAST} [get_ports rmii_rx_ref_clk]  ; ## D20  FMC_LPC_LA17_CC_P
+set_property -dict {PACKAGE_PIN AB27 IOSTANDARD LVCMOS25 SLEW FAST} [get_ports rmii_clk]         ; ## D20  FMC_LPC_LA17_CC_P
 
 set_property -dict {PACKAGE_PIN AF13 IOSTANDARD LVCMOS25 SLEW FAST} [get_ports fmc_sclk]         ; ## G07  FMC_LPC_LA00_CC_N
 set_property -dict {PACKAGE_PIN AG12 IOSTANDARD LVCMOS25 SLEW FAST} [get_ports fmc_cs]           ; ## G09  FMC_LPC_LA03_P

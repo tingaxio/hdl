@@ -78,7 +78,7 @@ module system_top (
   output              reset_n,
   output              mdc_fmc,
   inout               mdio_fmc,
-  input               rmii_rx_ref_clk,
+  input               rmii_clk,
   input   [ 1:0]      rmii_rxd,
   input               rmii_rx_dv,
   input               rmii_rx_er,
@@ -95,6 +95,7 @@ module system_top (
 
   wire            sys_resetn;
   wire            gpio_resetn;
+  wire            rmii_clk_g;
 
   // assignments
 
@@ -114,6 +115,11 @@ module system_top (
     .dio_i(gpio_o[14:0]),
     .dio_o(gpio_i[14:0]),
     .dio_p(gpio_bd));
+
+  BUFG BUFG_inst (
+      .O(rmii_clk_g),
+      .I(rmii_clk)
+   );
 
   system_wrapper i_system_wrapper (
     .ddr_addr (ddr_addr),
@@ -167,7 +173,7 @@ module system_top (
     .spi1_sdo_i (1'b0),
     .spi1_sdo_o (),
     .reset_n (sys_resetn),
-    .ref_clk_50 (rmii_rx_ref_clk),
+    .clk_50 (rmii_clk_g),
     .MDIO_ETHERNET_1_0_mdc(mdc_fmc),
     .MDIO_ETHERNET_1_0_mdio_io(mdio_fmc),
     .RMII_PHY_M_0_crs_dv (rmii_rx_dv),
