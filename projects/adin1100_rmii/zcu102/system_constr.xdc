@@ -7,11 +7,6 @@ set_property -dict {PACKAGE_PIN R12  IOSTANDARD LVCMOS18} [get_ports {rmii_rxd[1
 
 set_property -dict {PACKAGE_PIN Y5  IOSTANDARD LVCMOS18 SLEW FAST} [get_ports rmii_clk]          ; ## D20  FMC_HPC1_LA17_CC_P
 
-set_property -dict {PACKAGE_PIN AF5  IOSTANDARD LVCMOS18 SLEW FAST} [get_ports fmc_sclk]         ; ## G07  FMC_HPC1_LA00_CC_N
-set_property -dict {PACKAGE_PIN AH1  IOSTANDARD LVCMOS18 SLEW FAST} [get_ports fmc_cs]           ; ## G09  FMC_HPC1_LA03_P
-set_property -dict {PACKAGE_PIN AD2  IOSTANDARD LVCMOS18 SLEW FAST} [get_ports fmc_mosi]         ; ## H07  FMC_HPC1_LA02_P
-set_property -dict {PACKAGE_PIN AD1  IOSTANDARD LVCMOS18 SLEW FAST} [get_ports fmc_miso]         ; ## H08  FMC_HPC1_LA02_N
-
 set_property -dict {PACKAGE_PIN AH7  IOSTANDARD LVCMOS18 SLEW FAST} [get_ports rmii_tx_en]       ; ## C18  FMC_HPC1_LA14_P
 
 set_property -dict {PACKAGE_PIN AF3  IOSTANDARD LVCMOS18 SLEW FAST} [get_ports {rmii_txd[0]}]    ; ## G13  FMC_HPC1_LA08_N
