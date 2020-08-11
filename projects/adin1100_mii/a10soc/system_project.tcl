@@ -21,8 +21,6 @@ source $ad_hdl_dir/projects/common/a10soc/a10soc_system_assign.tcl
 #  R621: R0 -> DNI
 #  R633: R0 -> DNI
 
-set_location_assignment PIN_E13    -to  ext_clk                 ; ## D09  FMCA_HPC_LA01_CC_N
-
 set_location_assignment PIN_E12    -to  mii_rx_clk              ; ## D08  FMCA_HPC_LA01_CC_P
 set_location_assignment PIN_G7     -to  mii_rx_er               ; ## C22  FMCA_HPC_LA18_CC_P
 set_location_assignment PIN_C3     -to  mii_rx_dv               ; ## G21  FMCA_HPC_LA20_P
