@@ -120,7 +120,6 @@ module system_top (
   output  [ 3:0]    mii_txd,
   output            mii_tx_en,
   input             mii_tx_clk,
-  input             mii_crs,
   input             link_st
 );
 
@@ -244,8 +243,8 @@ module system_top (
     .sys_hps_emac1_phy_rxdv_i (mii_rx_dv),
     .sys_hps_emac1_phy_rxer_i (mii_rx_er),
     .sys_hps_emac1_phy_rxd_i ({4'h0,mii_rxd}),
-    .sys_hps_emac1_phy_col_i (led_0),
-    .sys_hps_emac1_phy_crs_i (mii_crs),
+    .sys_hps_emac1_phy_col_i (1'b0),
+    .sys_hps_emac1_phy_crs_i (1'b0),
     .sys_hps_emac1_gmii_mdo_o (hps_emac_mdo_o),
     .sys_hps_emac1_gmii_mdo_o_e (hps_emac_mdo_o_e),
     .sys_hps_emac1_gmii_mdi_i (hps_emac_mdi_i),
