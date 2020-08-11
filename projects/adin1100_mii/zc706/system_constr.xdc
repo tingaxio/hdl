@@ -8,13 +8,6 @@ set_property -dict {PACKAGE_PIN AK30 IOSTANDARD LVCMOS25} [get_ports {mii_rxd[1]
 set_property -dict {PACKAGE_PIN AF29 IOSTANDARD LVCMOS25} [get_ports {mii_rxd[2]}]              ; ## G27  FMC_LPC_LA25_P
 set_property -dict {PACKAGE_PIN AJ29 IOSTANDARD LVCMOS25} [get_ports {mii_rxd[3]}]              ; ## C27  FMC_LPC_LA27_N
 
-set_property -dict {PACKAGE_PIN AG15 IOSTANDARD LVCMOS25 SLEW FAST} [get_ports ext_clk]         ; ## D09  FMC_LPC_LA01_CC_N
-
-set_property -dict {PACKAGE_PIN AF13 IOSTANDARD LVCMOS25 SLEW FAST} [get_ports fmc_sclk]        ; ## G07  FMC_LPC_LA00_CC_N
-set_property -dict {PACKAGE_PIN AG12 IOSTANDARD LVCMOS25 SLEW FAST} [get_ports fmc_cs]          ; ## G09  FMC_LPC_LA03_P
-set_property -dict {PACKAGE_PIN AE12 IOSTANDARD LVCMOS25 SLEW FAST} [get_ports fmc_mosi]        ; ## H07  FMC_LPC_LA02_P
-set_property -dict {PACKAGE_PIN AF12 IOSTANDARD LVCMOS25 SLEW FAST} [get_ports fmc_miso]        ; ## H08  FMC_LPC_LA02_N
-
 set_property -dict {PACKAGE_PIN AE13 IOSTANDARD LVCMOS25 SLEW FAST} [get_ports mii_tx_clk]      ; ## G06  FMC_LPC_LA00_CC_P
 set_property -dict {PACKAGE_PIN AF18 IOSTANDARD LVCMOS25 SLEW FAST} [get_ports mii_tx_en]       ; ## C18  FMC_LPC_LA14_P
 set_property -dict {PACKAGE_PIN AF17 IOSTANDARD LVCMOS25 SLEW FAST} [get_ports mii_tx_er]       ; ## C19  FMC_LPC_LA14_N
