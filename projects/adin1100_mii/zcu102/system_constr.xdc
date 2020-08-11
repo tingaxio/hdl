@@ -8,13 +8,6 @@ set_property -dict {PACKAGE_PIN R12  IOSTANDARD LVCMOS18} [get_ports {mii_rxd[1]
 set_property -dict {PACKAGE_PIN AE10 IOSTANDARD LVCMOS18} [get_ports {mii_rxd[2]}]              ; ## G27  FMC_HPC1_LA25_P
 set_property -dict {PACKAGE_PIN T10  IOSTANDARD LVCMOS18} [get_ports {mii_rxd[3]}]              ; ## C27  FMC_HPC1_LA27_N
 
-set_property -dict {PACKAGE_PIN AJ5  IOSTANDARD LVCMOS18 SLEW FAST} [get_ports ext_clk]         ; ## D09  FMC_HPC1_LA01_CC_N
-
-set_property -dict {PACKAGE_PIN AF5  IOSTANDARD LVCMOS18 SLEW FAST} [get_ports fmc_sclk]        ; ## G07  FMC_HPC1_LA00_CC_N
-set_property -dict {PACKAGE_PIN AH1  IOSTANDARD LVCMOS18 SLEW FAST} [get_ports fmc_cs]          ; ## G09  FMC_HPC1_LA03_P
-set_property -dict {PACKAGE_PIN AD2  IOSTANDARD LVCMOS18 SLEW FAST} [get_ports fmc_mosi]        ; ## H07  FMC_HPC1_LA02_P
-set_property -dict {PACKAGE_PIN AD1  IOSTANDARD LVCMOS18 SLEW FAST} [get_ports fmc_miso]        ; ## H08  FMC_HPC1_LA02_N
-
 set_property -dict {PACKAGE_PIN AE5  IOSTANDARD LVCMOS18 SLEW FAST} [get_ports mii_tx_clk]      ; ## G06  FMC_HPC1_LA00_CC_P
 set_property -dict {PACKAGE_PIN AH7  IOSTANDARD LVCMOS18 SLEW FAST} [get_ports mii_tx_en]       ; ## C18  FMC_HPC1_LA14_P
 set_property -dict {PACKAGE_PIN AH6  IOSTANDARD LVCMOS18 SLEW FAST} [get_ports mii_tx_er]       ; ## C19  FMC_HPC1_LA14_N
