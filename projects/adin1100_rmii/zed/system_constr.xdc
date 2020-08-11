@@ -7,11 +7,6 @@ set_property -dict {PACKAGE_PIN E18  IOSTANDARD LVCMOS25} [get_ports {rmii_rxd[1
 
 set_property -dict {PACKAGE_PIN B19  IOSTANDARD LVCMOS25 SLEW FAST} [get_ports rmii_clk_50]      ; ## D20  FMC_LPC_LA17_CC_P
 
-set_property -dict {PACKAGE_PIN M20  IOSTANDARD LVCMOS25 SLEW FAST} [get_ports fmc_sclk]         ; ## G07  FMC_LPC_LA00_CC_N
-set_property -dict {PACKAGE_PIN N22  IOSTANDARD LVCMOS25 SLEW FAST} [get_ports fmc_cs]           ; ## G09  FMC_LPC_LA03_P
-set_property -dict {PACKAGE_PIN P17  IOSTANDARD LVCMOS25 SLEW FAST} [get_ports fmc_mosi]         ; ## H07  FMC_LPC_LA02_P
-set_property -dict {PACKAGE_PIN P18  IOSTANDARD LVCMOS25 SLEW FAST} [get_ports fmc_miso]         ; ## H08  FMC_LPC_LA02_N
-
 set_property -dict {PACKAGE_PIN K19  IOSTANDARD LVCMOS25 SLEW FAST} [get_ports rmii_tx_en]       ; ## C18  FMC_LPC_LA14_P
 
 set_property -dict {PACKAGE_PIN J22  IOSTANDARD LVCMOS25 SLEW FAST} [get_ports {rmii_txd[0]}]    ; ## G13  FMC_LPC_LA08_N
